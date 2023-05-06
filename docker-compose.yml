@@ -1,0 +1,22 @@
+#version: '3'
+services:
+  rabbitmq:
+    #    container_name: rabbitmq
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  worker2:
+    image: rabbitmq-demo_worker2:0.0.1-SNAPSHOT
+    environment:
+      spring.rabbitmq.host: rabbitmq
+    depends_on:
+      - rabbitmq
+  sender:
+    image: rabbitmq-demo_sender:0.0.1-SNAPSHOT
+    environment:
+      spring.rabbitmq.host: rabbitmq
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbitmq
