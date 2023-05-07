@@ -20,3 +20,9 @@ services:
       - "8080:8080"
     depends_on:
       - rabbitmq
+  prometheus:
+    image: prom/prometheus:v2.42.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prom/prometheus.yml:/etc/prom/prometheus.yml

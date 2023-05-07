@@ -10,10 +10,6 @@
         <module name="Task3Worker" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="rabbitWorker" target="17" />
-      <module name="Sendler" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
